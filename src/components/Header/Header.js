@@ -2,9 +2,11 @@ import React from 'react';
 import './Header.css';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import { Grid } from '@material-ui/core';
 
 function Header() {
   return (
+    /*
     <div className='header'>
       <img
         src='http://pngimg.com/uploads/amazon/amazon_PNG11.png'
@@ -35,6 +37,8 @@ function Header() {
         </div>
       </div>
     </div>
+  */
+    <Grid container xs={12}></Grid>
   );
 }
 
