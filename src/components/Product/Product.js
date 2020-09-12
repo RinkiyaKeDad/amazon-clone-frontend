@@ -1,9 +1,10 @@
 import React from 'react';
 import './Product.css';
+import { Grid } from '@material-ui/core';
 
 function Product({ id, title, image, price, rating }) {
   return (
-    <div className='product'>
+    <Grid container className='product'>
       <div className='product__info'>
         <p>{title}</p>
         <p className='product__price'>
@@ -22,7 +23,7 @@ function Product({ id, title, image, price, rating }) {
       <img src={image} alt='' />
 
       <button>Add to Basket</button>
-    </div>
+    </Grid>
   );
 }
 
