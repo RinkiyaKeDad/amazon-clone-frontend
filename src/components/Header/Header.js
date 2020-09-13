@@ -4,7 +4,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Grid } from '@material-ui/core';
 import { spacing } from '@material-ui/system';
-import theme from '../layout/theme';
+import theme from '../ThemeStuff/theme';
 
 import { makeStyles } from '@material-ui/core/styles';
 

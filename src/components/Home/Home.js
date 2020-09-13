@@ -23,7 +23,7 @@ function Home() {
         alignItems='center'
         spacing={2}
       >
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
           <Product
             id='12321341'
             title='The Lean Startup: How Constant Innovation Creates Radically Successful Businesses Paperback'
@@ -32,7 +32,7 @@ function Home() {
             image='https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg'
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
           <Product
             id='49538094'
             title='Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl'
@@ -42,7 +42,7 @@ function Home() {
           />
         </Grid>
 
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <Product
             id='4903850'
             title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
@@ -51,7 +51,7 @@ function Home() {
             image='https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg'
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <Product
             id='23445930'
             title='Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric'
@@ -61,7 +61,7 @@ function Home() {
           />
         </Grid>
 
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <Product
             id='3254354345'
             title='New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Silver (4th Generation)'
@@ -71,7 +71,7 @@ function Home() {
           />
         </Grid>
 
-        <Grid item xs={12}>
+        <Grid item sm={12}>
           <Product
             id='90829332'
             title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor - Super Ultra Wide Dual WQHD 5120 x 1440"
