@@ -7,6 +7,7 @@ import { spacing } from '@material-ui/system';
 import theme from '../ThemeStuff/theme';
 
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
   Hide: {
@@ -21,10 +22,13 @@ function Header() {
 
   return (
     <div className='header'>
-      <img
-        src='http://pngimg.com/uploads/amazon/amazon_PNG11.png'
-        className='header__logo'
-      />
+      <Link to='/'>
+        <img
+          src='http://pngimg.com/uploads/amazon/amazon_PNG11.png'
+          className='header__logo'
+        />
+      </Link>
+
       <div className='header__search'>
         <input className='header__searchInput' type='text' />
         <SearchIcon className='header__searchIcon' />
@@ -44,10 +48,12 @@ function Header() {
           <span className='header__optionLineOne'>Your</span>
           <span className='header__optionLineTwo'>Prime</span>
         </div>
-        <div className='header__optionBasket'>
-          <ShoppingBasketIcon />
-          <span className='header__basketCount header__optionLineTwo'>0</span>
-        </div>
+        <Link to='/checkout'>
+          <div className='header__optionBasket'>
+            <ShoppingBasketIcon />
+            <span className='header__basketCount header__optionLineTwo'>0</span>
+          </div>
+        </Link>
       </div>
     </div>
   );
