@@ -1,8 +1,23 @@
 import React from 'react';
 import './Product.css';
 import { Grid } from '@material-ui/core';
+import { useStateValue } from '../../context/StateProvider';
 
 function Product({ id, title, image, price, rating }) {
+  const [state, dispatch] = useStateValue();
+  const addToBasket = () => {
+    dispatch({
+      type: 'ADD_TO_BASKET',
+      item: {
+        id: id,
+        title: title,
+        image: image,
+        price: price,
+        rating: rating,
+      },
+    });
+  };
+
   return (
     <Grid container className='product'>
       <div className='product__info'>
@@ -22,7 +37,7 @@ function Product({ id, title, image, price, rating }) {
 
       <img src={image} alt='' />
 
-      <button>Add to Basket</button>
+      <button onClick={addToBasket}>Add to Basket</button>
     </Grid>
   );
 }

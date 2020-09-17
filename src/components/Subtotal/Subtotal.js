@@ -2,8 +2,13 @@ import React from 'react';
 import './Subtotal.css';
 import CurrencyFormat from 'react-currency-format';
 import { Grid } from '@material-ui/core';
+import { useStateValue } from '../../context/StateProvider';
 
 function Subtotal() {
+  const [{ basket }, dispatch] = useStateValue(); //destructuring basket from state can also do state.basket
+  console.log(basket);
+  let sum = 0;
+  basket.map(product => (sum = sum + product.price));
   return (
     <div className='subtotal'>
       <CurrencyFormat
@@ -11,7 +16,7 @@ function Subtotal() {
           <>
             <p>
               {/* Part of the homework */}
-              Subtotal (0 items): <strong>0</strong>
+              Subtotal ({basket.length} items): <strong>{sum}</strong>
             </p>
             <small className='subtotal__gift'>
               <input type='checkbox' /> This order contains a gift
