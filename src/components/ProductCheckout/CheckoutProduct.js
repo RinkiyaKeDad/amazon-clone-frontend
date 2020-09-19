@@ -1,5 +1,7 @@
 import React from 'react';
 import './CheckoutProduct.css';
+import { Grid } from '@material-ui/core';
+
 import { useStateValue } from './StateProvider';
 
 function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
@@ -14,7 +16,7 @@ function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
   };
 
   return (
-    <div className='checkoutProduct'>
+    <Grid container className='checkoutProduct'>
       <img className='checkoutProduct__image' src={image} />
 
       <div className='checkoutProduct__info'>
@@ -34,7 +36,7 @@ function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
           <button onClick={removeFromBasket}>Remove from Basket</button>
         )}
       </div>
-    </div>
+    </Grid>
   );
 }
 
