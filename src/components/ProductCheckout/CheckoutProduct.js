@@ -2,7 +2,7 @@ import React from 'react';
 import './CheckoutProduct.css';
 import { Grid } from '@material-ui/core';
 
-import { useStateValue } from './StateProvider';
+import { useStateValue } from '../../context/StateProvider';
 
 function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
   const [{ basket }, dispatch] = useStateValue();

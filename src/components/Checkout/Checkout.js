@@ -2,8 +2,12 @@ import React from 'react';
 import './Checkout.css';
 import Subtotal from '../Subtotal/Subtotal';
 import { Grid } from '@material-ui/core';
+import CheckoutProduct from '../ProductCheckout/CheckoutProduct';
+import { useStateValue } from '../../context/StateProvider';
 
 function Checkout() {
+  const [{ basket }, dispatch] = useStateValue(); //destructuring basket from state can also do state.basket
+
   return (
     <Grid container xs={12} className='checkout'>
       <Grid item xs={12} sm={9} className='checkout__left'>
@@ -15,6 +19,15 @@ function Checkout() {
 
         <div>
           <h2 className='checkout__title'>Your shopping Basket</h2>
+          {basket.map(item => (
+            <CheckoutProduct
+              id={item.id}
+              title={item.title}
+              image={item.image}
+              price={item.price}
+              rating={item.rating}
+            />
+          ))}
         </div>
       </Grid>
 
