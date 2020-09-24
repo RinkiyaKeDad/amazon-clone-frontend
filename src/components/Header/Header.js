@@ -9,6 +9,7 @@ import { useStateValue } from '../../context/StateProvider';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
+import { auth } from '../../firebase';
 
 const useStyles = makeStyles({
   Hide: {
@@ -22,7 +23,11 @@ function Header() {
   const [state, dispatch] = useStateValue();
 
   const classes = useStyles();
-
+  const handleAuthenticaton = () => {
+    if (state.user) {
+      auth.signOut();
+    }
+  };
   return (
     <div className='header'>
       <Link to='/'>
@@ -37,10 +42,12 @@ function Header() {
         <SearchIcon className='header__searchIcon' />
       </div>
       <div className='header__nav'>
-        <Link to='/login'>
-          <div className='header__option'>
+        <Link to={!state.user && '/login'}>
+          <div onClick={handleAuthenticaton} className='header__option'>
             <span className='header__optionLineOne'>Hello Guest</span>
-            <span className='header__optionLineTwo'>Sign in</span>
+            <span className='header__optionLineTwo'>
+              {state.user ? 'Sign Out' : 'Sign In'}
+            </span>
           </div>
         </Link>
         <div className='header__option'>

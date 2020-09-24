@@ -6,7 +6,7 @@ import CheckoutProduct from '../ProductCheckout/CheckoutProduct';
 import { useStateValue } from '../../context/StateProvider';
 
 function Checkout() {
-  const [{ basket }, dispatch] = useStateValue(); //destructuring basket from state can also do state.basket
+  const [{ basket, user }, dispatch] = useStateValue(); //destructuring basket from state can also do state.basket
 
   return (
     <Grid container xs={12} className='checkout'>
@@ -18,6 +18,7 @@ function Checkout() {
         />
 
         <div>
+          <h3>Hello, {user?.email}</h3>
           <h2 className='checkout__title'>Your shopping Basket</h2>
           {basket.map(item => (
             <CheckoutProduct
