@@ -45,7 +45,7 @@ function Header() {
         <Link style={{ textDecoration: 'none' }} to={!state.user && '/login'}>
           <div onClick={handleAuthenticaton} className='header__option'>
             <span className='header__optionLineOne'>
-              Hello {state.user ? state.user?.email : 'Guest'}
+              Hello {state.user ? state.user?.email.split('@')[0] : 'Guest'}
               {console.log(state.user)}
             </span>
             <span className='header__optionLineTwo'>
