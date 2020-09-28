@@ -19,7 +19,7 @@ function Product({ id, title, image, price, rating }) {
   };
 
   return (
-    <Grid container className='product'>
+    <Grid container className='product' key={id}>
       <div className='product__info'>
         <p>{title}</p>
         <p className='product__price'>

@@ -9,7 +9,7 @@ function Checkout() {
   const [{ basket, user }, dispatch] = useStateValue(); //destructuring basket from state can also do state.basket
 
   return (
-    <Grid container xs={12} className='checkout'>
+    <Grid container className='checkout'>
       <Grid item xs={12} sm={9} className='checkout__left'>
         <img
           className='checkout__ad'

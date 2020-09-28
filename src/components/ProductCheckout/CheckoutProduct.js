@@ -16,7 +16,7 @@ function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
   };
 
   return (
-    <Grid container className='checkoutProduct'>
+    <Grid container className='checkoutProduct' key={id}>
       <img className='checkoutProduct__image' src={image} />
 
       <div className='checkoutProduct__info'>

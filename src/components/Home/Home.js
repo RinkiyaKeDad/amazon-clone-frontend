@@ -5,7 +5,7 @@ import { Grid } from '@material-ui/core';
 
 function Home() {
   return (
-    <Grid container xs={12}>
+    <Grid container>
       <Grid style={{ zIndex: '-1' }} item xs={12}>
         <img
           className='home__image'
